@@ -6,8 +6,14 @@ main: Demo.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) $< -o main
 	./main
 
-valgrind: main
+test: test.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) $< -o test
+	./test
+
+
+valgrind: main test
 	valgrind --leak-check=full ./main
+	valgrind --leak-check=full ./test
 
 clean:
 	rm -f main

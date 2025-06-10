@@ -26,11 +26,15 @@ namespace exe4 {
 			sorted.insert(pose, e);
 			upDownUpdated = false;
 		}
-		void remove(T& e) {
+
+		void remove(T e) {
 			auto i = std::remove(cont.begin(), cont.end(), e);
+			if(i == cont.end()){
+				throw std::invalid_argument("No such element in the vector.");
+			}
 			cont.erase(i, cont.end());
 
-			i = remove(sorted.begin(), sorted.end(), e);
+			i = std::remove(sorted.begin(), sorted.end(), e);
 			sorted.erase(i, sorted.end());
 			upDownUpdated = false;
 		}
@@ -60,6 +64,14 @@ namespace exe4 {
 				}
 				upDownUpdated = true;
 			}
+		}
+
+		T& operator[](int pose) {
+			return cont[pose];
+		}
+
+		bool operator<(MyContainer<T> other) {
+			return size() < other.size();
 		}
 
 		~MyContainer() {};
