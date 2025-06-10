@@ -3,6 +3,7 @@
 
 namespace exe4 {
 
+	//the only difference between ordinary iterator and this iterator is in the ++ operator.
 	template <typename T>
 	class MyContainer<T>::MiddleOutOrderIT {
 	private:
@@ -17,6 +18,7 @@ namespace exe4 {
 			return *current;
 		}
 
+		//goes up and down, every time jumps 1 more, every time to the oposite direction.
 		MiddleOutOrderIT& operator++() {
 			current += dir*counter;
 			dir *= -1;

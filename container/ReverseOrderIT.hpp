@@ -15,6 +15,7 @@ namespace exe4 {
 			return *current;
 		}
 
+		//goes down instead of up...
 		ReverseOrderIT& operator++() {
 			--current;
 			return *this;
