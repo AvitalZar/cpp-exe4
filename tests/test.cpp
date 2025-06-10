@@ -1,10 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 
-#include "MyContainer.hpp"
-#include "OrderIT.hpp"
-#include "ReverseOrderIT.hpp"
-#include "MiddleOutOrderIT.hpp"
+#include "container/MyContainer.hpp"
+#include "container/OrderIT.hpp"
+#include "container/ReverseOrderIT.hpp"
+#include "container/MiddleOutOrderIT.hpp"
 
 using namespace exe4;
 
