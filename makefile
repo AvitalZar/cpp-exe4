@@ -1,3 +1,4 @@
+#tchykzr@gamil.com
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -I. -Icontainer -Itests
 HEADERS = $(wildcard container/*)
